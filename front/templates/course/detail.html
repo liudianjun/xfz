@@ -1,0 +1,109 @@
+
+
+{% extends 'base/front_base.html' %}
+
+{% block title %}
+    课堂详情页
+
+{% endblock %}
+
+{% block head %}
+    <script src="{% static 'dist/js/index.js' %}"></script>
+    <link rel="stylesheet" href="//at.alicdn.com/t/font_1245147_jeu8jq7xmb.css">
+    <link rel="stylesheet" href="{% static 'css/course/detail.min.css' %}">
+{% endblock %}
+
+{% block main %}
+    <div class="main">
+    <div class="course-nav">
+        <div class="nav-content">
+            <h3 class="title">在线课堂</h3>
+            <ul class="nav-list">
+                <li><a href="#">最新课堂</a></li>
+                <li><a href="#">投资人说</a></li>
+                <li><a href="#">明星案例</a></li>
+                <li><a href="#">创业知识</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="wrapper">
+        <div class="course-wrapper">
+            <div class="course-info">
+                <p class="title">对赌是什么</p>
+                <div class="price-group">
+                    <div class="share-group">
+                        <span class="share-title">分享至：</span>
+
+                    </div>
+                    <div class="buy-group">
+                        <!--<span class="price-pay">49元</span>
+                        <a href="#" class="buy-btn">购买</a>-->
+                        <span class="price-free">免费</span>
+                    </div>
+                </div>
+
+            </div>
+            <div class="video-group">
+
+            </div>
+        </div>
+        <div class="bottom-wrapper">
+            <div class="left-wrapper">
+                <div class="info-group">
+                    <div class="item-group">
+                        <p class="title-item">课程讲师</p>
+                        <div class="teacher">
+                            <div class="avatar">
+                                <img src="https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=3756398993,2692643829&fm=27&gp=0.jpg"
+                                     alt="" class="ava">
+                            </div>
+                            <div class="teacher-info">
+                                <p class="teacher-name">知了</p>
+                                <p class="desc">6666666</p>
+                            </div>
+                        </div>
+                        <p class="item-content">
+                            小饭桌创业课堂在线课堂是小饭桌旗下的线上视频课程产品，汇聚顶级创业大咖导师、行业资深专家，致力于用系统、垂直的知识体系让创业者认知升级、技能进阶。小饭桌创业课堂在线课堂用知识陪伴创业者从平凡到卓越！
+                        </p>
+                    </div>
+                </div>
+                 <div class="info-group">
+                    <div class="item-group">
+                        <p class="title-item">课程讲师</p>
+                        <div class="teacher">
+                            <div class="avatar">
+                                <img src="https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=3756398993,2692643829&fm=27&gp=0.jpg"
+                                     alt="" class="ava">
+                            </div>
+                            <div class="teacher-info">
+                                <p class="teacher-name">知了</p>
+                                <p class="desc">6666666</p>
+                            </div>
+                        </div>
+                        <p class="item-content">
+                            小饭桌创业课堂在线课堂是小饭桌旗下的线上视频课程产品，汇聚顶级创业大咖导师、行业资深专家，致力于用系统、垂直的知识体系让创业者认知升级、技能进阶。小饭桌创业课堂在线课堂用知识陪伴创业者从平凡到卓越！
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="recommend">
+                <p class="recommend-title">推荐课程</p>
+                <ul class="recommend-course">
+                    <li>
+                        <a href="#">
+                            <div class="course-info">
+                                <p class="title">共享单车</p>
+                                <p class="teacher">zhiliao</p>
+                            </div>
+                            <div class="course-thumbnail">
+                                <img src="https://static-image.xfz.cn/1513753715_100.jpg-course.list.small" alt=""
+                                     class="thumbnail">
+                            </div>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

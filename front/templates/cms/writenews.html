@@ -1,0 +1,64 @@
+{% extends 'cms/base.html' %}
+
+{% block title %}
+    发布新闻
+{% endblock %}
+
+{% block content-header %}
+    <h1>发布新闻</h1>
+{% endblock %}
+{% block head %}
+    <script src="{% static 'js/wirtenews.min.js' %}"></script>
+    <script src="{% static 'ueditor/ueditor.config.js' %}"></script>
+    <script src="{% static 'ueditor/ueditor.all.min.js' %}"></script>
+{% endblock %}
+
+{% block content %}
+    <div class="row">
+    <div class="col-md-12">
+        <div class="box box-primary">
+            <form action="" class="form">
+                <div class="box-body">
+                    <div class="form-group">
+                        <label for="title-form">标题</label>
+                        <input type="text" class="form-control" id="title-form" name="title">
+                    </div>
+                    <div class="form-group">
+                        <label for="category-form" >分类</label>
+                        <select name="category" id="category-form" class="form-control">
+                            {% for category in categorys %}
+                                <option value={{ category.pk }}>{{ category.name }}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                    <div class="form-grouo">
+                        <label for="desc-form">描述</label>
+                        <input type="text" class="form-control" name="desc" id="desc-form">
+                    </div>
+                    <div class="form-grouo">
+                        <label for="thumbnail-form">缩略图(url)</label>
+                        <div class="input-group">
+                            <input type="text" class="form-control" name="thumbnail" id="thumbnail-form">
+                            <span class="input-group-btn">
+                                <label  class="btn btn-info btn-file" >添加图片
+                                    <input type="file" value="" hidden id="upload-btn">
+                                </label>
+                            </span>
+
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="content-form">内容</label>
+                        <!--<textarea  id="content-form" name="content" rows="10" cols="30" class="form-control"></textarea>-->
+                        <script id="editor" type="text/plain"></script>
+                    </div>
+
+                </div>
+                <div class="box-footer">
+                    <button class="btn btn-info" id="pub-btn">发布新闻</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    </div>
+{% endblock %}

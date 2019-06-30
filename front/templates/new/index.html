@@ -1,0 +1,80 @@
+
+
+{% extends "base/front_base.html" %}
+{% load news_filters %}
+
+{% block head %}
+    <script src="{% static 'js/index.js' %}"></script>
+    {#    <link rel="stylesheet" href="{% static 'css/news/index.min.css' %}">#}
+    {#    <link rel="stylesheet" href="{% static 'css/comment/login.min.css' %}">#}
+{% endblock %}
+
+{% block title %}
+    小饭桌主页
+{% endblock %}
+
+{% block main %}
+    <div class="main">
+        <div class="wrapper">
+            <div class="news-wrapper">
+                <div class="banner-group" id="banner-group">
+                    <ul class="banner-ul" id="banner-ul">
+                        <li><a href="#"><img
+                                src="https://static-fancube.xfz.cn/1558511894652/%E8%9A%82%E4%B8%8A%E5%88%9B%E4%B8%9A%E8%90%A5%20%E4%B8%BB%E8%A7%86%E8%A7%89.png?imageslim"
+                                alt=""></a></li>
+                        <li><a href="#"><img src="https://static-image.xfz.cn/1560647960_202.jpg" alt=""></a></li>
+                        <li><a href="#"><img src="https://static-image.xfz.cn/1560557920_166.jpg" alt=""></a></li>
+                        <li><a href="#"><img src="https://static-image.xfz.cn/1560512238_7.png" alt=""></a></li>
+                        <li><a href="#"><img src="https://static-image.xfz.cn/1560163219_816.jpg" alt=""></a></li>
+                        <li><a href="#"><img src="https://static-image.xfz.cn/1560163311_515.jpg" alt=""></a></li>
+                    </ul>
+                    <span class="arrows arrows-left">‹</span>
+                    <span class="arrows arrows-right">›</span>
+                    <div class="page-control-group">
+                        <ul class="page-control">
+                        </ul>
+                    </div>
+                </div>
+                <div class="list-outer-group">
+                    <ul class="list-tab">
+                        {% for category in category %}
+                            <li><a href="#">{{ category.name }}</a></li>
+                        {% endfor %}
+
+                    </ul>
+                    <ul class="list-inner-group">
+                        {% for news in newses %}
+                             <li>
+                            <div class="thumbnail-group">
+                                <a href="#"><img src="{{ news.thumbnail }}"
+                                                 alt=""></a>
+                            </div>
+                            <div class="news-group">
+                                <p class="title"><a href="#">
+                                    {{ news.title }}
+                                </a></p>
+                                <p class="desc">
+                                    {{ news.desc }}</p>
+                                <p class="more">
+                                    <span class="category"><a href="#">{{ news.category }}</a></span>
+                                    <span class="pub-time">{{ news.pubtime |time_since}}</span>
+                                    <span class="author">{{ news.author }}</span>
+
+                                </p>
+                            </div>
+                        </li>
+                        {% endfor %}
+
+                    </ul>
+                    <div class="load-more-group">
+                        <button class="load-more">
+                            加载更多
+                        </button>
+                    </div>
+                </div>
+            </div>
+            {% include 'common/sidebar.html' %}
+
+        </div>
+    </div>
+{% endblock %}

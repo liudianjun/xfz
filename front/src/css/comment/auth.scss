@@ -1,0 +1,150 @@
+@import "init";
+//body{
+//  background: #888888;
+//}
+.mask-wrapper{
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  overflow: scroll;
+  display: none;
+  background: rgba(126,126,126,0.7);
+  z-index: 100;
+  .author-wrapper{
+    $authorWrapperHeight: 600px;
+    $authorWrapperWidth: 400px;
+    width: $authorWrapperWidth;
+    height: $authorWrapperHeight;
+    //background: white;
+    //margin: 50px auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-left: -200px;
+    margin-top: -300px;
+
+    .close-group{
+      width: 100%;
+      height: 40px;
+      background: royalblue;
+      .close-btn{
+        display: inline-block;
+        //width: 40px;
+        //height: 40px;
+        float: right;
+        margin-top: 3px;
+        margin-right: 33px;
+        color: black;
+        font-size: 33px;
+        cursor: pointer;
+
+      }
+    }
+    .author-inner-group{
+      width: 100%;
+      height: $authorWrapperHeight - 40px;
+      //background: white;
+      position: relative;
+      overflow: hidden;
+      .scroll-wrapper{
+        background: darkolivegreen;
+        width: $authorWrapperWidth * 2;
+        //height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+
+        .sign-in{
+          float: left;
+
+        }
+        .sign-up{
+          float: left;
+
+        }
+        .auth-group{
+          width: $authorWrapperWidth;
+          //height: 100%;
+          padding: 20px;
+          box-sizing: border-box;
+          font-size: 16px;
+          line-height: 40px;
+          .top-wrapper{
+            width: 100%;
+            height: 40px;
+            border-bottom: 1px solid cornflowerblue;
+            border-top: 1px solid cornflowerblue;
+          }
+          .form-group{
+            margin-top: 20px;
+            .input-group{
+              margin-bottom: 20px;
+              overflow: hidden;
+              .form-control{
+                background: rosybrown;
+                border: 1px solid black;
+                padding: 10px;
+                box-sizing: border-box;
+                width: 100%;
+                border-radius: 10px;
+              }
+              .remember-me{
+                font-size: 12px;
+                input{
+                  //float: left;
+                }
+
+              }
+              .submit-btn{
+                width: 100%;
+                background: slateblue;
+                height: 40px;
+                border-radius: 10px;
+                font-size: 16px;
+                cursor: pointer;
+              }
+              .short-input{
+                width: 250px;
+                float: left;
+              }
+              .input-group-addon{
+                float: right;
+                width: 100px;
+
+              }
+              .sms-captcha{
+                //width: 100%;
+                height: 40px;
+                //border: 1px solid blueviolet;
+                display: inline-block;
+                border-radius: 10px;
+                background: royalblue;
+                box-sizing: border-box;
+                cursor: pointer;
+                text-align: center;
+              }
+            }
+          }
+          .title{
+            float: left;
+            color: black;
+            background: royalblue;
+            border-radius: 10px;
+            box-shadow: 0 5px 5px;
+            //border-bottom: 3px solid cornflowerblue;
+          }
+          .switch{
+            float: right;
+            background: red;
+            border-radius: 10px;
+            box-shadow: 0 5px 5px;
+            //line-height: 33px;
+          }
+        }
+      }
+    }
+
+  }
+}
