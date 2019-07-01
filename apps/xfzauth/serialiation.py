@@ -5,4 +5,5 @@ class UserSerializers(serializers.ModelSerializer):
     class Meta:
         model = User
         fields = ("uid","telephone", "email", "is_staff", "is_active","username")
+        # fields = ("username",)
 

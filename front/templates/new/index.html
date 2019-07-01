@@ -4,7 +4,35 @@
 {% load news_filters %}
 
 {% block head %}
-    <script src="{% static 'js/index.js' %}"></script>
+    <script src="{% static 'js/index.min.js' %}"></script>
+    <script src="{% static 'js/loadmorenews.min.js' %}"></script>
+    <script src="{% static 'arttemplate/template-web.js' %}"></script>
+    <script id="newsitem" type="text/html">
+        {% verbatim %}
+        {{ each newses news index }}
+        <li>
+            <div class="thumbnail-group">
+                <a href="/new/{{ news.id }}/"><img src="{{ news.thumbnail }}"
+                                 alt=""></a>
+            </div>
+            <div class="news-group">
+                <p class="title"><a href="/new/{{ news.id }}/">
+                    {{ news.title }}
+                </a></p>
+                <p class="desc">
+                    {{ news.desc }}</p>
+                <p class="more">
+                    <span class="category"><a href="#">{{ news.category }}</a></span>
+                    <span class="pub-time">{{ news.pubtime | timeSince }}</span>
+                    <span class="author">{{ news.author.username }}</span>
+
+                </p>
+            </div>
+        </li>
+        {{ /each }}
+        {% endverbatim %}
+
+    </script>
     {#    <link rel="stylesheet" href="{% static 'css/news/index.min.css' %}">#}
     {#    <link rel="stylesheet" href="{% static 'css/comment/login.min.css' %}">#}
 {% endblock %}
@@ -44,30 +72,30 @@
                     </ul>
                     <ul class="list-inner-group">
                         {% for news in newses %}
-                             <li>
-                            <div class="thumbnail-group">
-                                <a href="#"><img src="{{ news.thumbnail }}"
-                                                 alt=""></a>
-                            </div>
-                            <div class="news-group">
-                                <p class="title"><a href="#">
-                                    {{ news.title }}
-                                </a></p>
-                                <p class="desc">
-                                    {{ news.desc }}</p>
-                                <p class="more">
-                                    <span class="category"><a href="#">{{ news.category }}</a></span>
-                                    <span class="pub-time">{{ news.pubtime |time_since}}</span>
-                                    <span class="author">{{ news.author }}</span>
+                            <li>
+                                <div class="thumbnail-group">
+                                    <a href="{% url 'news:new_detail' new_id=news.pk %}"><img src="{{ news.thumbnail }}"
+                                                     alt=""></a>
+                                </div>
+                                <div class="news-group">
+                                    <p class="title"><a href="{% url 'news:new_detail' new_id=news.pk %}">
+                                        {{ news.title }}
+                                    </a></p>
+                                    <p class="desc">
+                                        {{ news.desc }}</p>
+                                    <p class="more">
+                                        <span class="category"><a href="#">{{ news.category }}</a></span>
+                                        <span class="pub-time">{{ news.pubtime |time_since }}</span>
+                                        <span class="author">{{ news.author }}</span>
 
-                                </p>
-                            </div>
-                        </li>
+                                    </p>
+                                </div>
+                            </li>
                         {% endfor %}
 
                     </ul>
                     <div class="load-more-group">
-                        <button class="load-more">
+                        <button class="load-more" id="load-more-btn">
                             加载更多
                         </button>
                     </div>

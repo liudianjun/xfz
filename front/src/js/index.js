@@ -13,6 +13,7 @@ function Banner() {
 
 
 }
+
 // 动态设置bannerul宽度
 Banner.prototype.initbanner = function(){
 
@@ -157,7 +158,10 @@ Banner.prototype.run = function () {
     // clearInterval(timer);
 };
 
+
+
 $(function () {
     var banner = new Banner();
     banner.run();
+
 });
